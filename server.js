@@ -117,4 +117,9 @@ app.get('/profile/:id', async (req, res) => {
   }
 });
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'healthy', service: 'user-service' });
+});
+
 app.listen(3001, () => console.log('User Service running on port 3001'));
